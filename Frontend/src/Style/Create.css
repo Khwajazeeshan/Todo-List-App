@@ -1,0 +1,192 @@
+.create {
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    animation: fadeIn 0.6s ease 0.2s both;
+}
+
+.create-container {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    gap: 1rem;
+    position: relative;
+}
+
+.input-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+.create input {
+    width: 100%;
+    border: 2px solid var(--border-color);
+    padding: 1rem 1.5rem;
+    padding-left: 3.5rem;
+    height: 60px;
+    border-radius: var(--radius-lg);
+    font-size: 1.1rem;
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-card);
+    color: var(--text-primary);
+    transition: all var(--transition-normal);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.create input::placeholder {
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.create input:focus {
+    outline: none;
+    border-color: var(--accent-purple);
+    background: var(--bg-card-hover);
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1), var(--shadow-glow);
+    transform: translateY(-2px);
+}
+
+.input-icon {
+    position: absolute;
+    left: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.3rem;
+    color: var(--text-muted);
+    transition: all var(--transition-normal);
+    pointer-events: none;
+}
+
+.create input:focus+.input-icon {
+    color: var(--accent-purple);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.create button {
+    padding: 1rem 2rem;
+    height: 60px;
+    border: none;
+    background: var(--primary-gradient);
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.create button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left var(--transition-slow);
+}
+
+.create button:hover::before {
+    left: 100%;
+}
+
+.create button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.create button:active {
+    transform: translateY(0);
+}
+
+.button-icon {
+    display: inline-block;
+    margin-left: 0.5rem;
+    transition: transform var(--transition-normal);
+}
+
+.create button:hover .button-icon {
+    transform: translateX(4px);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .create {
+        padding: 2rem 1.5rem;
+    }
+
+    .create-container {
+        max-width: 100%;
+    }
+
+    .create input,
+    .create button {
+        height: 56px;
+        font-size: 1rem;
+    }
+
+    .create button {
+        padding: 1rem 1.5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .create {
+        padding: 1.5rem 1rem;
+    }
+
+    .create-container {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .create input {
+        height: 52px;
+        padding: 0.875rem 1.25rem;
+        padding-left: 3rem;
+        font-size: 0.95rem;
+    }
+
+    .input-icon {
+        left: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .create button {
+        width: 100%;
+        height: 52px;
+        padding: 0.875rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .create {
+        padding: 1.25rem 0.75rem;
+    }
+
+    .create input,
+    .create button {
+        height: 48px;
+        font-size: 0.9rem;
+    }
+
+    .create input {
+        padding: 0.75rem 1rem;
+        padding-left: 2.75rem;
+    }
+
+    .input-icon {
+        left: 0.875rem;
+        font-size: 1.1rem;
+    }
+}
