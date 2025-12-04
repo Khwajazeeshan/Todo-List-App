@@ -91,8 +91,8 @@ Todo List App-MERN STACK/
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd "Todo List App-MERN STACK"
+   git clone https://github.com/Khwajazeeshan/Todo-List-App.git
+   cd "Todo List App"
    ```
 
 2. **Install Backend Dependencies**
